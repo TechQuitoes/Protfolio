@@ -4,13 +4,15 @@ const Header = () => {
   return (
      <header className="flex items-center justify-between px-8 py-4 shadow-md">
             <h1 className="text-2xl font-bold text-blue-700">Rapid<span className="text-orange-500">Go</span> Logistics</h1>
-            <nav className="space-x-6 hidden md:block">
-              <a href="#services">Services</a>
-              <a href="#industries">Industries</a>
-              <a href="#track">Track</a>
-              <a href="#contact">Contact</a>
+            <nav className="space-x-6 hidden md:block ">
+              <a href="#services"
+              className=" hover:underline"
+              >Services</a>
+              <a href="#industries"className=" hover:underline">Industries</a>
+              <a href="#track" className=" hover:underline">Track</a>
+              <a href="#contact" className=" hover:underline">Contact</a>
             </nav>
-            <Button className=" bg-gray-400 hover:bg-orange-600">Get a Quote</Button>
+            <Button className=" bg-orange-600">Get a Quote</Button>
           </header>
   )
 }

@@ -3,7 +3,7 @@ import { Truck, Package, Clock, Globe,  } from "lucide-react";
 import ServiceCard from './ServiceCard';
 const Service = () => {
   return (
-    <section id="services" className="py-20 px-8 bg-gray-400">
+    <section id="services" className="py-20 px-8 bg-gray-100">
         <h3 className="text-3xl font-bold text-center mb-12">Our Services</h3>
         <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <ServiceCard icon={<Truck />} title="Road Transport" desc="FTL & LTL pan-India transport solutions." />
