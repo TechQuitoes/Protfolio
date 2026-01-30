@@ -12,7 +12,7 @@ const Header = () => {
               <a href="#track" className=" hover:underline">Track</a>
               <a href="#contact" className=" hover:underline">Contact</a>
             </nav>
-            <Button className=" bg-orange-600">Get a Quote</Button>
+            <Button className="text-white bg-orange-600">Get a Quote</Button>
           </header>
   )
 }

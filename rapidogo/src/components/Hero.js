@@ -6,8 +6,8 @@ const Hero = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Fast. Reliable. Logistics.</h2>
             <p className="max-w-2xl mx-auto mb-8">End-to-end transport & supply chain solutions built for speed, safety, and scale.</p>
             <div className="flex justify-center gap-4">
-              <Button className="text-white  hover:bg-orange-600">Request a Quote</Button>
-              <Button variant="outline" className="text-white  hover:bg-orange-600 border-white">Track Shipment</Button>
+              <Button className="text-white bg-orange-600 rounded-md hover:bg-white hover:text-orange-600">Request a Quote</Button>
+              <Button variant="outline" className="text-white bg-orange-600 border-white rounded-md  hover:bg-white hover:text-orange-600">Track Shipment</Button>
             </div>
           </section>
     
