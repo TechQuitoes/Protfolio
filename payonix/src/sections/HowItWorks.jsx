@@ -23,22 +23,22 @@ const HowItWorks = () => {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  relative">
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 via-green-500 to-orange-500 opacity-30" />
+          <div className="hidden lg:block absolute top-28 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 via-green-500 to-orange-500 opacity-30" />
 
           {steps.map((step, index) => {
             const Icon = step.icon;
 
             return (
-              <div key={index} className="relative bg-[#17132e]">
-                <div className="glass-effect rounded-2xl p-8 text-center relative z-10 border border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:-translate-y-2">
-                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center font-bold text-white text-lg shadow-lg">
+              <div key={index} className="relative rounded-2xl border bg-[#17132e] border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:-translate-y-2 ">
+                <div className="glass-effect rounded-2xl border-hidden text-center relative z-10 border border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:-translate-y-2">
+                  <div className="absolute -top-7 -right-4 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center font-bold text-white text-lg shadow-lg">
                     {step.id}
                   </div>
 
                   <div
-                    className={` w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-2xl`}
+                    className={` w-20 h-20 mx-auto mt-5 mb-6 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-2xl`}
                   >
-                    <Icon className="w-10 h-10 text-white" />
+                    <Icon className=" w-10 h-10 text-white" />
                   </div>
 
                   <h3 className=" px-16 text-xl font-bold mb-4 text-white">

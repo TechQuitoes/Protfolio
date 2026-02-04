@@ -2,11 +2,28 @@ import { useState } from "react";
 import { Search, Plus, Minus, CircleHelp } from "lucide-react";
 import { categories, faqs } from "../data/faqsDats";
 
+import useSendEmail from "../hooks/useSendEmail";
+
 const FAQ = () => {
+  
   const [active, setActive] = useState(0);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
+  const [question, setQuestion] = useState("");
+const { sendEmail, loading, success, error } = useSendEmail();
 
+// .......................................send email funtion.................................
+const handleSend = async () => {
+  if (!question.trim()) return alert("Enter a message");
+
+  const ok = await sendEmail({
+    message: question,
+  });
+
+  if (ok) setQuestion("");
+};
+
+//....................................................................................
   const filteredFaqs = faqs.filter((f) => {
     const matchCategory = filter === "All" || f.category === filter;
     const matchSearch =
@@ -111,14 +128,24 @@ const FAQ = () => {
               </h3>
               <p className="text-gray-300 mb-6">Let me know</p>
 
-              <input
-                placeholder="Enter here"
-                className="w-full px-4 py-3 mb-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              />
+             <input
+  value={question}
+  onChange={(e) => setQuestion(e.target.value)}
+  placeholder="Enter here"
+  className="w-full px-4 py-3 mb-4 bg-white/5 border border-white/10 rounded-lg text-white"
+/>
 
-              <button className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                Send
-              </button>
+<button
+  onClick={handleSend}
+  disabled={loading}
+  className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 rounded-lg"
+>
+  {loading ? "Sending..." : "Send"}
+</button>
+
+{success && <p className="text-green-400 mt-3">Sent successfully ✅</p>}
+{error && <p className="text-red-400 mt-3">Failed to send ❌</p>}
+
             </div>
           </div>
         </div>
